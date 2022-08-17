@@ -27,8 +27,11 @@ class Comment
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Conference $conference = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $photoFilename = null;
 
     public function getId(): ?int
     {
@@ -83,7 +86,7 @@ class Comment
         return $this;
     }
 
-    public function getConference(): ?Conference
+    public function getConference(): Conference
     {
         return $this->conference;
     }
@@ -93,5 +96,22 @@ class Comment
         $this->conference = $conference;
 
         return $this;
+    }
+
+    public function getPhotoFilename(): ?string
+    {
+        return $this->photoFilename;
+    }
+
+    public function setPhotoFilename(?string $photoFilename): self
+    {
+        $this->photoFilename = $photoFilename;
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->getEmail();
     }
 }
