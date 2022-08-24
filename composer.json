@@ -35,7 +35,6 @@
         "symfony/property-info": "6.1.*",
         "symfony/proxy-manager-bridge": "6.1.*",
         "symfony/runtime": "6.1.*",
-        "symfony/security-bundle": "6.1.*",
         "symfony/serializer": "6.1.*",
         "symfony/string": "6.1.*",
         "symfony/translation": "6.1.*",
@@ -44,7 +43,9 @@
         "symfony/web-link": "6.1.*",
         "symfony/workflow": "6.1.*",
         "symfony/yaml": "6.1.*",
+        "twig/cssinliner-extra": "^3.4",
         "twig/extra-bundle": "^2.12|^3.0",
+        "twig/inky-extra": "^3.4",
         "twig/intl-extra": "^3",
         "twig/twig": "^2.12|^3.0",
         "webdriver-binary/binary-chromedriver": "^6.1"
