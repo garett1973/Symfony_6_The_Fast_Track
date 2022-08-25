@@ -1,0 +1,3 @@
+Start consuming async messages saved to the queue
+
+symfony console messenger:consume async -vv
