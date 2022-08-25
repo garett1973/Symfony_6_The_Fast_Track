@@ -41,6 +41,7 @@
         "symfony/twig-bundle": "6.1.*",
         "symfony/validator": "6.1.*",
         "symfony/web-link": "6.1.*",
+        "symfony/webpack-encore-bundle": "^1.15",
         "symfony/workflow": "6.1.*",
         "symfony/yaml": "6.1.*",
         "twig/cssinliner-extra": "^3.4",
@@ -92,6 +93,9 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "dev": [
+            "Composer\\Config:disableProcessTimeout"
         ]
     },
     "conflict": {
