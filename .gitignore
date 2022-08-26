@@ -24,3 +24,10 @@ node_modules
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+/secret/
+/secrets/
+.env
+/.env
+/.env.test
+
+Z_some_commands.txt
