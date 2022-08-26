@@ -11,6 +11,7 @@
         <div class="col-12 col-lg-8">
             {% if comments|length > 0 %}
                 {% for comment in comments %}
+                    {% if 'published' == comment.state %}
                     <div class="media shadow border rounded-3 p-3 mb-4">
                         <div class="comment-img me-3">
                             {% if comment.photofilename %}
@@ -36,6 +37,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 {% endfor %}
                 <div>There are {{ comments|length }} comments.</div>
                 {% if previous >= 0 %}
