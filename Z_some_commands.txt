@@ -7,3 +7,6 @@ cache purging:
 
 curl -s -I -X PURGE -u admin:admin `symfony var:export SYMFONY_PROJECT_DEFAULT_ROUTE_URL`/admin/http-cache/
 curl -s -I -X PURGE -u admin:admin `symfony var:export SYMFONY_PROJECT_DEFAULT_ROUTE_URL`/admin/http-cache/conference_header
+
+to create graphic representation of the workflow:
+symfony console workflow:dump comment | dot -Tpng -o workflow.png
