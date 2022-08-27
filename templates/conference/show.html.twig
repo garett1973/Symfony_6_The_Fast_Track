@@ -48,12 +48,12 @@
                     </div>
                     {% endif %}
                 {% endfor %}
-                <div>There are {{ comments|length }} comments.</div>
+                <div class="mb-4">There are {{ comments|length }} comments.</div>
                 {% if previous >= 0 %}
-                    <a href="{{ path('conference', { slug: conference.slug, offset: previous }) }}">Previous</a>
+                    <a class="me-2 text-decoration-none font-monospace text-dark fw-bolder" href="{{ path('conference', { slug: conference.slug, offset: previous }) }}">Previous</a>
                 {% endif %}
                 {% if next < comments|length %}
-                    <a href="{{ path('conference', { slug: conference.slug, offset: next }) }}">Next</a>
+                    <a class="text-decoration-none font-monospace text-dark fw-bolder" href="{{ path('conference', { slug: conference.slug, offset: next }) }}">Next</a>
                 {% endif %}
             {% else %}
                 <div class="text-center">
