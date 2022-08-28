@@ -9,10 +9,3 @@ export function findConferences() {
 export function findComments(conference) {
     return fetchCollection('api/comments?conference='+conference.id);
 }
-
-
-
-//==========================================================
-// Delete this snippet after you have implemented the API calls
-//==========================================================
-// todo: continue at 'Fetching data from the API'

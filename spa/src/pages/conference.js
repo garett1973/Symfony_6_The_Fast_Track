@@ -1,9 +1,52 @@
-import {h} from 'preact';
+import { h } from 'preact';
+import { findComments } from "../api/api";
+import { useState, useEffect } from "preact/hooks";
 
-export default function Conference() {
+function Comment({comments}) {
+    if (comments !== null && comments.length === 0) {
+        return <div className="text-center p-4">No comments yet</div>;
+    }
+
+    if (!comments) {
+        return <div className="text-center p-4">Loading...</div>;
+    }
+
     return (
-        <>
-            Conference
-        </>
+        <div className="p-4">
+            {comments.map(comment => (
+                <div className="shadow border rounded-3 p-3 mb-4">
+                    <div className="comment-img mr-3">
+                        {!comment.photofilename ? '' : (
+                            <a href={ENV_API_ENDPOINT+'uploads/photos/'+comment.photofilename} target="_blank">
+                                <img src={ENV_API_ENDPOINT+'uploads/photos/'+comment.photofilename} alt="Missing_picture" />
+                            </a>
+                        )}
+                </div>
+
+                    <h5 className="fw-light mt-3 mb-0">{comment.author}</h5>
+                    <div className="comment-text">{ comment.text }</div>
+                </div>
+            ))}
+        </div>
+    );
+}
+
+
+
+
+export default function Conference({ conferences, slug }) {
+    const conference = conferences.find(conference => conference.slug === slug);
+    const [comments, setComments] = useState(null);
+
+    useEffect(() => {
+        findComments(conference)
+            .then((comments) => setComments(comments));
+    }, [slug]);
+
+    return (
+        <div className="p-3">
+            <h4>{ conference.city } { conference.year }</h4>
+            <Comment comments={comments} />
+        </div>
     );
 };

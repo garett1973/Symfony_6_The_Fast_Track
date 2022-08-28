@@ -13,6 +13,7 @@
     "node-sass": "^7.0.1",
     "preact": "^10.10.6",
     "preact-router": "^4.1.0",
-    "sass-loader": "^13.0.2"
+    "sass-loader": "^13.0.2",
+    "webpack": "^5.74.0"
   }
 }
