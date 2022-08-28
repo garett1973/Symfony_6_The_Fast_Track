@@ -12,7 +12,7 @@ function App() {
 
     useEffect(() => {
         findConferences()
-            .then((setConferences) => setConferences(conferences));
+            .then((conferences) => setConferences(conferences));
     }, []);
 
     if (conferences === null) {
