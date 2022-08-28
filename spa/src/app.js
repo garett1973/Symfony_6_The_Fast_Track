@@ -24,7 +24,7 @@ function App() {
             <header className="header">
                 <nav className="navbar navbar-light bg-light">
                     <div className="container">
-                        <Link className="navbar-brand mr-4 pr-2" href="/">
+                        <Link className="navbar-brand mr-4 pr-2 fs-2" href="/">
                             &#128217; Guestbook
                         </Link>
                     </div>
@@ -32,9 +32,9 @@ function App() {
 
                 <nav className="bg-light border-bottom text-center">
                     {conferences.map(conference => (
-                        <Link className="nav-conference" href={'/conference/'+conference.slug}>
-                            {conference.city} {conference.year}
-                        </Link>
+                            <Link className="text-decoration-none text-dark me-4" href={'/conference/'+conference.slug}>
+                                {conference.city} {conference.year}
+                            </Link>
                     ))}
                 </nav>
             </header>

@@ -11,8 +11,10 @@ Encore
     .enableSassLoader()
     .enableSingleRuntimeChunk()
     .addPlugin(new HtmlWebpackPlugin({template: 'src/index.ejs', alwaysWriteToDisk: true}))
+    // .addPlugin(new webpack.DefinePlugin({
+    //     'ENV_API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT),
     .addPlugin(new webpack.DefinePlugin({
-        'ENV_API_ENDPOINT': JSON.stringify(process.env.API_ENDPOINT),
+        'ENV_API_ENDPOINT': JSON.stringify("https://localhost:8001/"),
     }))
 ;
 
