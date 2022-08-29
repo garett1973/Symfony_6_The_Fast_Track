@@ -6,13 +6,12 @@
         Apache Cordova Team
     </author>
 
-    <preference name="hostname" value="127.0.0.1:8001" />
-<!--    <preference name="AndroidInsecureFileModeEnabled" value="true" />-->
+    <preference name="hostname" value="192.168.0.6:8001" />
 
     <access origin="*" />
     <content src="/" />
     <allow-intent href="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="https://127.0.0.1:8001" />
+<!--    <allow-intent href="http://*/*" />-->
+<!--    <allow-intent href="https://*/*" />-->
+<!--    <allow-intent href="https://127.0.0.1:8001" />-->
 </widget>
