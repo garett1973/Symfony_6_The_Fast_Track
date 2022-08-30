@@ -25,7 +25,7 @@
                         <div class="comment-img me-3">
                             {% if comment.photofilename %}
                                 <a href="{{ asset('uploads/photos/' ~ comment.photofilename) }}" target="_blank">
-                                    <img src="{{ asset('uploads/photos/' ~ comment.photofilename) }}" />
+                                    <img src="{{ asset('uploads/photos/' ~ comment.photofilename) }}" alt="Picture is not provided" />
                                 </a>
                             {% endif %}
                         </div>
@@ -48,7 +48,8 @@
                     </div>
                     {% endif %}
                 {% endfor %}
-                <div class="mb-4">There are {{ comments|length }} comments.</div>
+{#                <div class="mb-4">there are {{ comments|length }} comments</div>#}
+                <div class="mb-4">{{ 'nb_of_comments'|trans({count: comments|length}) }}</div>
                 {% if previous >= 0 %}
                     <a class="me-2 text-decoration-none font-monospace text-dark fw-bolder" href="{{ path('conference', { slug: conference.slug, offset: previous }) }}">Previous</a>
                 {% endif %}
